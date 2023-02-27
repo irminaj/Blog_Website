@@ -20,6 +20,7 @@ const handlePostSubmit = async (e) => {
   e.preventDefault();
   const formData = new FormData(e.target);
   const newPost = await createPost(API_ENDPOINTS.createPost, formData);
+  console.log(newPost);
   e.target.reset();
 };
 
