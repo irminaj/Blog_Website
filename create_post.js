@@ -25,3 +25,12 @@ const handlePostSubmit = async (e) => {
 };
 
 createPostForm.addEventListener("submit", handlePostSubmit);
+
+window.onload = async () => {
+  if (localStorage.length > 0) {
+    createPostForm.style.display = "inline-block";
+  } else {
+    createPostForm.style.display = "none";
+    alert("Please, log in");
+  }
+};
