@@ -1,4 +1,8 @@
 const postContainer = document.getElementById("posts-container");
+const loginForm = document.getElementById("login-form");
+const userNameInput = document.querySelector("#username");
+const passwordInput = document.querySelector("#password");
+const logoutBtn = document.getElementById("logout-btn");
 
 const API_ENDPOINTS = {
   getPosts: "https://testapi.io/api/irminaj/resource/newPosts",
@@ -33,21 +37,12 @@ const postTemplate = (data) => {
       <h3>${data.title}</h3>
       <p>${data.content}</p>
       <img src=${data.image}>
-      <button class="delete" onClick=deletePost(${data.id})>Delete</button>
+      <button style="display:none" class="delete" onClick=deletePost(${data.id})>Delete</button>
     </div>
   `;
 };
 
-window.onload = async () => {
-  const posts = await getPosts(API_ENDPOINTS.getPosts);
-  posts.data.forEach((post) => {
-    postContainer.innerHTML += postTemplate(post);
-  });
-};
-
 // Log in
-
-const loginForm = document.getElementById("login-form");
 
 const getUsers = (url) => {
   return fetch(url)
@@ -58,6 +53,43 @@ const getUsers = (url) => {
 
 const handleLogin = async (e) => {
   e.preventDefault();
+  const users = await getUsers(API_ENDPOINTS.getUsers);
+  let foundUser = users.data.find((data) => findUser(data));
+  localStorage.setItem("user", JSON.stringify(foundUser));
+  location.reload();
+};
+
+const findUser = (data) => {
+  let userNameValue = userNameInput.value;
+  let passwordValue = passwordInput.value;
+  return userNameValue === data.username && passwordValue === data.password;
 };
 
 loginForm.addEventListener("submit", handleLogin);
+
+// LogOut
+
+logoutBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  localStorage.clear();
+  document.querySelector(".delete").style.display = "none";
+  loginForm.style.display = "inline-block";
+});
+
+const checkIfUserIsLoged = () => {
+  if (localStorage.length > 0) {
+    document.querySelector(".delete").style.display = "inline-block";
+    loginForm.style.display = "none";
+  } else {
+    document.querySelector(".delete").style.display = "none";
+    loginForm.style.display = "inline-block";
+  }
+};
+
+window.onload = async () => {
+  const posts = await getPosts(API_ENDPOINTS.getPosts);
+  posts.data.forEach((post) => {
+    postContainer.innerHTML += postTemplate(post);
+  });
+  checkIfUserIsLoged();
+};
