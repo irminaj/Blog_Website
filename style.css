@@ -1,0 +1,20 @@
+body {
+  font-family: "Quicksand", sans-serif;
+}
+body #nav a {
+  display: none;
+}
+body main {
+  background-color: #f5f5f5;
+}
+body .post {
+  max-width: 100%;
+  border-bottom: grey 1px solid;
+  padding: 10px;
+}
+body .post img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}/*# sourceMappingURL=style.css.map */

@@ -3,7 +3,10 @@ const postContainer = document.getElementById("posts-container");
 const API_ENDPOINTS = {
   getPosts: "https://testapi.io/api/irminaj/resource/newPosts",
   deletePost: (id) => `https://testapi.io/api/irminaj/resource/newPosts/${id}`,
+  getUsers: "https://testapi.io/api/irminaj/resource/users",
 };
+
+// Get posts
 
 const getPosts = (url) => {
   return fetch(url)
@@ -41,3 +44,20 @@ window.onload = async () => {
     postContainer.innerHTML += postTemplate(post);
   });
 };
+
+// Log in
+
+const loginForm = document.getElementById("login-form");
+
+const getUsers = (url) => {
+  return fetch(url)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((err) => console.log(err));
+};
+
+const handleLogin = async (e) => {
+  e.preventDefault();
+};
+
+loginForm.addEventListener("submit", handleLogin);
