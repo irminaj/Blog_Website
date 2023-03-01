@@ -37,7 +37,7 @@ const postTemplate = (data) => {
       <h3>${data.title}</h3>
       <p>${data.content}</p>
       <img src=${data.image}>
-      <button style="display:none" class="delete" onClick=deletePost(${data.id})>Delete</button>
+      <button class="delete" style="display:none" onClick=deletePost(${data.id})>Delete</button>
     </div>
   `;
 };
@@ -74,15 +74,18 @@ logoutBtn.addEventListener("click", (e) => {
   localStorage.clear();
   document.querySelector(".delete").style.display = "none";
   loginForm.style.display = "inline-block";
+  logoutBtn.style.display = "none";
 });
 
 const checkIfUserIsLoged = () => {
   if (localStorage.length > 0) {
     document.querySelector(".delete").style.display = "inline-block";
     loginForm.style.display = "none";
+    logoutBtn.style.display = "inline-block";
   } else {
     document.querySelector(".delete").style.display = "none";
     loginForm.style.display = "inline-block";
+    logoutBtn.style.display = "none";
   }
 };
 
