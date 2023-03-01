@@ -1,7 +1,11 @@
 const createUserForm = document.getElementById("register-form");
+const loginForm = document.getElementById("login-form");
+const userNameInput = document.querySelector("#login-username");
+const passwordInput = document.querySelector("#login-password");
 
 const API_ENDPOINTS = {
   createUser: "https://testapi.io/api/irminaj/resource/users",
+  getUsers: "https://testapi.io/api/irminaj/resource/users",
 };
 
 const createUser = (url, data) => {
@@ -25,3 +29,46 @@ const handleUserSubmit = async (e) => {
 };
 
 createUserForm.addEventListener("submit", handleUserSubmit);
+
+// Log in
+
+const getUsers = (url) => {
+  return fetch(url)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((err) => console.log(err));
+};
+
+const handleLogin = async (e) => {
+  e.preventDefault();
+  const users = await getUsers(API_ENDPOINTS.getUsers);
+  let foundUser = users.data.find((data) => findUser(data));
+  localStorage.setItem("user", JSON.stringify(foundUser));
+  location.reload();
+};
+
+const findUser = (data) => {
+  let userNameValue = userNameInput.value;
+  let passwordValue = passwordInput.value;
+  return userNameValue === data.username && passwordValue === data.password;
+};
+
+loginForm.addEventListener("submit", handleLogin);
+
+// Display correct forms
+
+window.onload = () => {
+  checkIfUserIsLoged();
+};
+
+const checkIfUserIsLoged = () => {
+  if (localStorage.length > 0) {
+    document.querySelector("#login-form").style.display = "none";
+    document.querySelector("#account").textContent = "You are loged!";
+    console.log("Client is already loged");
+  } else {
+    document.querySelector("#login-form").style.display = "flex";
+  }
+};
+
+// localStorage.clear();
