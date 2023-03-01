@@ -38,7 +38,7 @@ body {
     }
   }
 
-  #register-container {
+  .wrapper {
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -55,11 +55,11 @@ body {
       text-align: center;
     }
 
-    #register-form {
+    form {
       display: flex;
       flex-direction: column;
 
-      #input-container {
+      .form-inputs {
         display: flex;
         flex-direction: column;
 
@@ -124,13 +124,27 @@ body {
         float: right;
       }
     }
-    #register-container {
+    .wrapper {
       max-width: 900px;
 
-      #register-form {
+      #create-post {
+        flex-direction: column;
+        width: 80%;
+        label {
+          align-self: flex-start;
+        }
+        input {
+          width: 100%;
+        }
+      }
+
+      form {
         max-width: 700px;
         margin: 0 auto;
-        #input-container {
+        #create-post-inputs {
+          flex-direction: column;
+        }
+        .form-inputs {
           display: flex;
           flex-direction: row;
           justify-content: center;

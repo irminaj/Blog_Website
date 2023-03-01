@@ -34,7 +34,7 @@ body .post img {
   -o-object-fit: fill;
      object-fit: fill;
 }
-body #register-container {
+body .wrapper {
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -47,23 +47,23 @@ body #register-container {
   transform: translate(-50%, -50%);
   padding: 20px;
 }
-body #register-container h1 {
+body .wrapper h1 {
   text-align: center;
 }
-body #register-container #register-form {
+body .wrapper form {
   display: flex;
   flex-direction: column;
 }
-body #register-container #register-form #input-container {
+body .wrapper form .form-inputs {
   display: flex;
   flex-direction: column;
 }
-body #register-container #register-form #input-container input {
+body .wrapper form .form-inputs input {
   border: none;
   border-bottom: 1.5px black solid;
   padding: 10px;
 }
-body #register-container #register-form button {
+body .wrapper form button {
   font-family: "Quicksand", sans-serif;
   margin-top: 10px;
   padding: 15px 20px;
@@ -108,20 +108,33 @@ body #register-container #register-form button {
     width: 70px;
     float: right;
   }
-  body #register-container {
+  body .wrapper {
     max-width: 900px;
   }
-  body #register-container #register-form {
+  body .wrapper #create-post {
+    flex-direction: column;
+    width: 80%;
+  }
+  body .wrapper #create-post label {
+    align-self: flex-start;
+  }
+  body .wrapper #create-post input {
+    width: 100%;
+  }
+  body .wrapper form {
     max-width: 700px;
     margin: 0 auto;
   }
-  body #register-container #register-form #input-container {
+  body .wrapper form #create-post-inputs {
+    flex-direction: column;
+  }
+  body .wrapper form .form-inputs {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
   }
-  body #register-container #register-form button {
+  body .wrapper form button {
     width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -28,9 +28,11 @@ createPostForm.addEventListener("submit", handlePostSubmit);
 
 window.onload = async () => {
   if (localStorage.length > 0) {
-    createPostForm.style.display = "inline-block";
+    createPostForm.style = "display:flex; flex-direction:column";
   } else {
     createPostForm.style.display = "none";
     alert("Please, log in");
   }
 };
+
+// sutvarkyti log in/log out mygtukus

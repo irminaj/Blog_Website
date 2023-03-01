@@ -5,10 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
     <script defer src="create_post.js"></script>
   </head>
-  <body>
-    <form id="create-post">
+  <body
+    style="
+      background-image: url('https://img.freepik.com/free-photo/blue-oil-paint-strokes-textured-background_53876-98328.jpg?w=996&t=st=1677697999~exp=1677698599~hmac=8cde66054921a2337c175d74795f93047e1d2f3f8c103c946a96e1ff0c69674a');
+    "
+  >
+    <!-- Navigation -->
+    <div id="nav">
+      <h2>Travel guru</h2>
+      <img src="./assets/menu-icon.svg" alt="hamburger menu icon" />
+      <div id="links-container">
+        <a href="create_post.html">Create post</a>
+        <a href="register.html">Register</a>
+        <a href="home.html">Home</a>
+      </div>
+    </div>
+    <div class="wrapper">
+      <h1>Create a post!</h1>
+      <form id="create-post">
+        <div class="form-inputs" id="create-post-inputs">
+          <label for="title">Title:</label>
+          <input type="text" id="title" , name="title" />
+          <label for="content">Content:</label>
+          <input type="text" id="content" , name="content" />
+          <label for="image">Add image link:</label>
+          <input type="text" id="image" name="image" />
+        </div>
+        <button type="submit">Create</button>
+      </form>
+    </div>
+    <!-- <form id="create-post">
       <label for="title">Title:</label>
       <input type="text" id="title" , name="title" />
       <label for="content">Content:</label>
@@ -17,6 +49,6 @@
       <input type="text" id="image" name="image" />
       <button type="submit">Create Post</button>
     </form>
-    <a href="index.html">Home</a>
+    <a href="index.html">Home</a> -->
   </body>
 </html>
