@@ -1,7 +1,23 @@
 body {
   font-family: "Quicksand", sans-serif;
 }
-body #nav a {
+body #nav {
+  height: 50px;
+  padding: 10px;
+  border-bottom: solid;
+  border-width: 60%;
+}
+body #nav h2 {
+  display: inline;
+}
+body #nav img {
+  width: 50px;
+  float: right;
+}
+body #nav a,
+body #nav form,
+body #nav input,
+body #nav button {
   display: none;
 }
 body main {
@@ -17,4 +33,39 @@ body .post img {
   height: 100%;
   -o-object-fit: fill;
      object-fit: fill;
+}
+
+@media only screen and (min-width: 768px) {
+  body #nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  body #nav img {
+    display: none;
+  }
+  body #nav a,
+  body #nav input,
+  body #nav form,
+  body #nav button {
+    display: inline-block;
+  }
+  body #nav a {
+    color: black;
+    text-decoration: none;
+    margin-right: 8px;
+    font-size: 20px;
+  }
+  body #nav form input {
+    height: 22px;
+    font-family: "Quicksand", sans-serif;
+  }
+  body #nav button {
+    background-color: white;
+    border: 0.5px solid black;
+    font-family: "Quicksand", sans-serif;
+    padding: 5px;
+    width: 70px;
+    float: right;
+  }
 }/*# sourceMappingURL=style.css.map */
