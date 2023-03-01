@@ -34,6 +34,46 @@ body .post img {
   -o-object-fit: fill;
      object-fit: fill;
 }
+body #register-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+body #register-container h1 {
+  text-align: center;
+}
+body #register-container #register-form {
+  display: flex;
+  flex-direction: column;
+}
+body #register-container #register-form #input-container {
+  display: flex;
+  flex-direction: column;
+}
+body #register-container #register-form #input-container input {
+  border: none;
+  border-bottom: 1.5px black solid;
+  padding: 10px;
+}
+body #register-container #register-form button {
+  font-family: "Quicksand", sans-serif;
+  margin-top: 10px;
+  padding: 15px 20px;
+  width: 120px;
+  align-self: center;
+  background-color: black;
+  color: white;
+  border-style: none;
+  font-size: 0.8rem;
+}
 
 @media only screen and (min-width: 768px) {
   body #nav {
@@ -56,7 +96,7 @@ body .post img {
     margin-right: 8px;
     font-size: 20px;
   }
-  body #nav form input {
+  body #nav #login-form input {
     height: 22px;
     font-family: "Quicksand", sans-serif;
   }
@@ -67,5 +107,21 @@ body .post img {
     padding: 5px;
     width: 70px;
     float: right;
+  }
+  body #register-container {
+    max-width: 900px;
+  }
+  body #register-container #register-form {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  body #register-container #register-form #input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  body #register-container #register-form button {
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,6 +1,5 @@
 body {
   font-family: "Quicksand", sans-serif;
-
   #nav {
     height: 50px;
     padding: 10px;
@@ -38,6 +37,51 @@ body {
       object-fit: fill;
     }
   }
+
+  #register-container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+
+    h1 {
+      text-align: center;
+    }
+
+    #register-form {
+      display: flex;
+      flex-direction: column;
+
+      #input-container {
+        display: flex;
+        flex-direction: column;
+
+        input {
+          border: none;
+          border-bottom: 1.5px black solid;
+          padding: 10px;
+        }
+      }
+      button {
+        font-family: "Quicksand", sans-serif;
+        margin-top: 10px;
+        padding: 15px 20px;
+        width: 120px;
+        align-self: center;
+        background-color: black;
+        color: white;
+        border-style: none;
+        font-size: 0.8rem;
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -65,7 +109,7 @@ body {
         font-size: 20px;
       }
 
-      form {
+      #login-form {
         input {
           height: 22px;
           font-family: "Quicksand", sans-serif;
@@ -78,6 +122,23 @@ body {
         padding: 5px;
         width: 70px;
         float: right;
+      }
+    }
+    #register-container {
+      max-width: 900px;
+
+      #register-form {
+        max-width: 700px;
+        margin: 0 auto;
+        #input-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+        button {
+          width: 100%;
+        }
       }
     }
   }

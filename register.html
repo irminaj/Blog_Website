@@ -12,7 +12,11 @@
     <!-- <link rel="stylesheet" href="./nav_style/nav_style.css" /> -->
     <script defer src="registration.js"></script>
   </head>
-  <body>
+  <body
+    style="
+      background-image: url('https://img.freepik.com/free-photo/flat-lay-acrylic-paint-wallpaper_23-2149127616.jpg?w=996&t=st=1677690890~exp=1677691490~hmac=7cf86cec19a3ceadb1863bad0990ea14ba7591ae9071bb69474cdfed05801fa4');
+    "
+  >
     <!-- Navigation -->
     <div id="nav">
       <h2>Travel guru</h2>
@@ -23,11 +27,17 @@
         <a href="posts.html">Posts</a>
       </div>
     </div>
-    <h1>Register Now!</h1>
-    <form id="register-form">
-      <input type="text" id="username" name="username" placeholder="Username" />
-      <input type="password" id="password" name="password" placeholder="Password" />
-      <button type="submit">Register</button>
-    </form>
+    <div id="register-container">
+      <h1>Register Now!</h1>
+      <form id="register-form">
+        <div id="input-container">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" />
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" />
+        </div>
+        <button type="submit">Register</button>
+      </form>
+    </div>
   </body>
 </html>
