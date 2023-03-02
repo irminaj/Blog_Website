@@ -78,21 +78,3 @@ logoutBtn.addEventListener("click", (e) => {
   // logoutBtn.style.display = "none";
   location.reload();
 });
-
-// const checkIfUserIsLoged = () => {
-//   if (localStorage.length > 0) {
-//     document.querySelector(".delete").style.display = "inline-block";
-//     logoutBtn.style.display = "inline-block";
-//   } else {
-//     document.querySelector(".delete").style.display = "none";
-//     logoutBtn.style.display = "none";
-//   }
-// };
-
-// window.onload = async () => {
-//   const posts = await getPosts(API_ENDPOINTS.getPosts);
-//   posts.data.forEach((post) => {
-//     postContainer.innerHTML += postTemplate(post);
-//   });
-//   checkIfUserIsLoged();
-// };

@@ -1,37 +1,54 @@
-body {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* body {
   font-family: "Quicksand", sans-serif;
 }
-body #nav {
-  height: 50px;
-  padding: 10px;
-  border-bottom: solid;
+* body #nav {
+  height: 80px;
+  padding: 20px;
+  border-bottom: 2px solid black;
   border-width: 60%;
+  background-color: #f5f5f5;
 }
-body #nav h2 {
+* body #nav h2 {
   display: inline;
 }
-body #nav img {
+* body #nav img {
   width: 50px;
   float: right;
 }
-body #nav a,
-body #nav form,
-body #nav input,
-body #nav button {
+* body #nav a,
+* body #nav form,
+* body #nav input,
+* body #nav #logout-btn {
   display: none;
 }
-body main .post {
-  background-color: #f5f5f5;
-  width: 100%;
-  border-bottom: grey 1px solid;
-  padding: 10px;
+* body main #posts-container {
   margin: 10px 0;
 }
-body main .post img {
+* body main #posts-container .post {
+  background-color: #f5f5f5;
+  border-bottom: grey 2px solid;
   width: 100%;
-  height: 100%;
+  padding-bottom: 10px;
 }
-body .wrapper {
+* body main #posts-container .post img {
+  width: 100%;
+}
+* body main #posts-container .post h3,
+* body main #posts-container .post p {
+  padding: 10px 20px;
+}
+* body main #posts-container .post h3 {
+  font-size: 1.5rem;
+}
+* body main #posts-container .post p {
+  font-size: 1rem;
+}
+* body .wrapper {
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -40,29 +57,29 @@ body .wrapper {
   margin: 20px auto;
   padding: 20px;
 }
-body .wrapper h1 {
+* body .wrapper h1 {
   text-align: center;
 }
-body .wrapper form {
+* body .wrapper form {
   display: flex;
   flex-direction: column;
 }
-body .wrapper form .form-inputs {
+* body .wrapper form .form-inputs {
   display: flex;
   flex-direction: column;
 }
-body .wrapper form .form-inputs input {
+* body .wrapper form .form-inputs input {
   border: none;
   border-bottom: 1.5px black solid;
   padding: 10px;
 }
-body .wrapper form .form-inputs input:-webkit-autofill, body .wrapper form .form-inputs input:-webkit-autofill:hover, body .wrapper form .form-inputs input:-webkit-autofill:focus, body .wrapper form .form-inputs input:-webkit-autofill:active {
+* body .wrapper form .form-inputs input:-webkit-autofill, * body .wrapper form .form-inputs input:-webkit-autofill:hover, * body .wrapper form .form-inputs input:-webkit-autofill:focus, * body .wrapper form .form-inputs input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
-body .wrapper form .form-inputs input:focus {
+* body .wrapper form .form-inputs input:focus {
   outline: 0;
 }
-body .wrapper form button {
+* body .wrapper form button {
   font-family: "Quicksand", sans-serif;
   margin-top: 10px;
   padding: 15px 20px;
@@ -73,7 +90,7 @@ body .wrapper form button {
   border-style: none;
   font-size: 0.8rem;
 }
-body .wrapper .link {
+* body .wrapper .link {
   color: black;
 }
 
@@ -137,5 +154,15 @@ body .wrapper .link {
   }
   body .wrapper form button {
     width: 100%;
+  }
+  body main #posts-container {
+    max-width: 768px;
+    margin: 10px auto;
+  }
+  body main #posts-container .post h3 {
+    font-size: 2rem;
+  }
+  body main #posts-container .post p {
+    font-size: 1.5rem;
   }
 }/*# sourceMappingURL=style.css.map */
