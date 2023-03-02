@@ -1,5 +1,6 @@
 const createPostForm = document.getElementById("create-post");
 const logoutBtn = document.querySelector("#logout-btn");
+const user = JSON.parse(localStorage.getItem("user"));
 
 const API_ENDPOINTS = {
   createPost: "	https://testapi.io/api/irminaj/resource/newPosts",
@@ -19,7 +20,10 @@ const createPost = (url, data) => {
 
 const handlePostSubmit = async (e) => {
   e.preventDefault();
+  const userName = user.username;
   const formData = new FormData(e.target);
+  formData.append("username", userName);
+  console.log(formData);
   const newPost = await createPost(API_ENDPOINTS.createPost, formData);
   console.log(newPost);
   e.target.reset();
