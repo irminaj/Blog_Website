@@ -3,6 +3,7 @@ const loginForm = document.getElementById("login-form");
 const userNameInput = document.querySelector("#login-username");
 const passwordInput = document.querySelector("#login-password");
 const logoutBtn = document.querySelector("#logout-btn");
+const message = document.querySelector("#message");
 
 const API_ENDPOINTS = {
   createUser: "https://testapi.io/api/irminaj/resource/users",
@@ -44,8 +45,12 @@ const handleLogin = async (e) => {
   e.preventDefault();
   const users = await getUsers(API_ENDPOINTS.getUsers);
   let foundUser = users.data.find((data) => findUser(data));
-  localStorage.setItem("user", JSON.stringify(foundUser));
-  location.reload();
+  if (foundUser) {
+    localStorage.setItem("user", JSON.stringify(foundUser));
+    location.reload();
+  } else {
+    message.textContent = "Credentials are incorrect! Try again!";
+  }
 };
 
 const findUser = (data) => {
