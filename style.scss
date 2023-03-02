@@ -67,6 +67,16 @@ body {
           border: none;
           border-bottom: 1.5px black solid;
           padding: 10px;
+
+          &:-webkit-autofill,
+          &:-webkit-autofill:hover,
+          &:-webkit-autofill:focus,
+          &:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px white inset !important;
+          }
+          &:focus {
+            outline: 0;
+          }
         }
       }
       button {
@@ -85,6 +95,12 @@ body {
       color: black;
     }
   }
+  // input:-webkit-autofill,
+  // input:-webkit-autofill:hover,
+  // input:-webkit-autofill:focus,
+  // input:-webkit-autofill:active {
+  //   -webkit-box-shadow: 0 0 0 30px white inset !important;
+  // }
 }
 
 @media only screen and (min-width: 768px) {

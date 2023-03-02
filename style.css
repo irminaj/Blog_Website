@@ -56,6 +56,12 @@ body .wrapper form .form-inputs input {
   border-bottom: 1.5px black solid;
   padding: 10px;
 }
+body .wrapper form .form-inputs input:-webkit-autofill, body .wrapper form .form-inputs input:-webkit-autofill:hover, body .wrapper form .form-inputs input:-webkit-autofill:focus, body .wrapper form .form-inputs input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+body .wrapper form .form-inputs input:focus {
+  outline: 0;
+}
 body .wrapper form button {
   font-family: "Quicksand", sans-serif;
   margin-top: 10px;
