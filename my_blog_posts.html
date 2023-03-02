@@ -4,7 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="my_blog_posts.js"></script>
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <!-- Navigation -->
+    <div id="nav">
+      <h2>Travel guru</h2>
+      <img src="./assets/menu-icon.svg" alt="hamburger menu icon" />
+      <div id="links-container">
+        <a href="create_post.html">Create post</a>
+        <a href="register.html">Register/Log in</a>
+        <a href="my_blog_posts.html">My posts</a>
+        <button id="logout-btn">Log out</button>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <main><div id="posts-container"></div></main>
+  </body>
 </html>

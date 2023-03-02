@@ -1,5 +1,4 @@
 const postContainer = document.getElementById("posts-container");
-const loginForm = document.getElementById("login-form");
 const logoutBtn = document.getElementById("logout-btn");
 
 const API_ENDPOINTS = {
