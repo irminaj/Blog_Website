@@ -2,6 +2,7 @@ const createUserForm = document.getElementById("register-form");
 const loginForm = document.getElementById("login-form");
 const userNameInput = document.querySelector("#login-username");
 const passwordInput = document.querySelector("#login-password");
+const logoutBtn = document.querySelector("#logout-btn");
 
 const API_ENDPOINTS = {
   createUser: "https://testapi.io/api/irminaj/resource/users",
@@ -66,9 +67,18 @@ const checkIfUserIsLoged = () => {
     document.querySelector("#login-form").style.display = "none";
     document.querySelector("#account").textContent = "You are loged!";
     console.log("Client is already loged");
+    document.querySelector(".register").style.display = "none";
+    logoutBtn.style.display = "inline-block";
   } else {
     document.querySelector("#login-form").style.display = "flex";
+    logoutBtn.style.display = "none";
   }
 };
 
-// localStorage.clear();
+logoutBtn.addEventListener("click", () => {
+  // e.preventDefault();
+  localStorage.clear();
+  loginForm.style.display = "inline-block";
+  logoutBtn.style.display = "none";
+  location.reload();
+});

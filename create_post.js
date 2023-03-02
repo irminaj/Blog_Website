@@ -1,4 +1,5 @@
 const createPostForm = document.getElementById("create-post");
+const logoutBtn = document.querySelector("#logout-btn");
 
 const API_ENDPOINTS = {
   createPost: "	https://testapi.io/api/irminaj/resource/newPosts",
@@ -31,8 +32,15 @@ window.onload = async () => {
     createPostForm.style = "display:flex; flex-direction:column";
   } else {
     createPostForm.style.display = "none";
-    alert("Please, log in");
+    document.querySelector("#create-post-header").innerHTML = `You need to <a href="register.html" class="link">login<a> to create a post!`;
   }
 };
 
-// sutvarkyti log in/log out mygtukus
+logoutBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  localStorage.clear();
+  createPostForm.style.display = "none";
+  document.querySelector("#create-post-header").innerHTML = `You need to <a href="register.html" class="link">login<a> to create a post!`;
+  logoutBtn.style.display = "none";
+  location.reload();
+});
