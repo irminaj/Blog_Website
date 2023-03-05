@@ -75,6 +75,6 @@ window.onload = async (e) => {
 logoutBtn.addEventListener("click", (e) => {
   e.preventDefault();
   localStorage.clear();
-  // logoutBtn.style.display = "none";
+  logoutBtn.style.display = "none";
   location.reload();
 });
