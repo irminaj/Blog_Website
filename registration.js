@@ -4,6 +4,12 @@ const userNameInput = document.querySelector("#login-username");
 const passwordInput = document.querySelector("#login-password");
 const logoutBtn = document.querySelector("#logout-btn");
 const message = document.querySelector("#message");
+const toggleButton = document.querySelector("#toggle-button");
+const navbarLinks = document.querySelector("#links-container");
+
+toggleButton.addEventListener("click", () => {
+  navbarLinks.classList.toggle("active");
+});
 
 const API_ENDPOINTS = {
   createUser: "https://testapi.io/api/irminaj/resource/users",

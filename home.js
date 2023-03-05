@@ -1,5 +1,11 @@
 const postContainer = document.getElementById("posts-container");
 const logoutBtn = document.getElementById("logout-btn");
+const toggleButton = document.querySelector("#toggle-button");
+const navbarLinks = document.querySelector("#links-container");
+
+toggleButton.addEventListener("click", () => {
+  navbarLinks.classList.toggle("active");
+});
 
 const API_ENDPOINTS = {
   getPosts: "https://testapi.io/api/irminaj/resource/newPosts",

@@ -1,6 +1,12 @@
 const postContainer = document.getElementById("posts-container");
 const logoutBtn = document.getElementById("logout-btn");
 const user = JSON.parse(localStorage.getItem("user"));
+const toggleButton = document.querySelector("#toggle-button");
+const navbarLinks = document.querySelector("#links-container");
+
+toggleButton.addEventListener("click", () => {
+  navbarLinks.classList.toggle("active");
+});
 
 const API_ENDPOINTS = {
   getPosts: "https://testapi.io/api/irminaj/resource/newPosts",
@@ -56,7 +62,9 @@ window.onload = async (e) => {
   e.preventDefault();
   if (localStorage.length > 0) {
     filterPosts(e);
+    logoutBtn.style.display = "inline-block";
   } else {
     document.querySelector("#posts-container").textContent = "Please login!";
+    logoutBtn.style.display = "none";
   }
 };
