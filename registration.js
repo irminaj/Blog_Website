@@ -76,7 +76,7 @@ window.onload = () => {
 const checkIfUserIsLoged = () => {
   if (localStorage.length > 0) {
     document.querySelector("#login-form").style.display = "none";
-    document.querySelector("#account").textContent = "You are loged!";
+    document.querySelector("#account").textContent = "You are successfully logged-in!";
     console.log("Client is already loged");
     document.querySelector(".register").style.display = "none";
     logoutBtn.style.display = "inline-block";
@@ -87,7 +87,6 @@ const checkIfUserIsLoged = () => {
 };
 
 logoutBtn.addEventListener("click", () => {
-  // e.preventDefault();
   localStorage.clear();
   loginForm.style.display = "inline-block";
   logoutBtn.style.display = "none";

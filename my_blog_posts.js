@@ -50,7 +50,6 @@ const filterPosts = async (e) => {
   e.preventDefault();
   const data = await getPosts(API_ENDPOINTS.getPosts);
   const allPosts = data.data;
-  // console.log(allPosts);
   const userPosts = allPosts.filter((item) => item.username === userName);
   console.log(userPosts);
   userPosts.forEach((post) => {
@@ -64,7 +63,18 @@ window.onload = async (e) => {
     filterPosts(e);
     logoutBtn.style.display = "inline-block";
   } else {
-    document.querySelector("#posts-container").textContent = "Please login!";
+    const header = document.querySelector("#posts-container");
+    header.innerHTML = `You need to <a href="register.html" class="link">login<a>to see your blog posts!`;
+    header.style = "font-size: 1.5rem; font-weight:bold; text-align:center";
     logoutBtn.style.display = "none";
   }
 };
+
+// LogOut
+
+logoutBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  localStorage.clear();
+  // logoutBtn.style.display = "none";
+  location.reload();
+});
