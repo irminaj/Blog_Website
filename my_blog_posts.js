@@ -50,11 +50,18 @@ const filterPosts = async (e) => {
   e.preventDefault();
   const data = await getPosts(API_ENDPOINTS.getPosts);
   const allPosts = data.data;
+  console.log(allPosts.length);
   const userPosts = allPosts.filter((item) => item.username === userName);
-  console.log(userPosts);
-  userPosts.forEach((post) => {
-    postContainer.innerHTML += postTemplateforUsers(post);
-  });
+  if (userPosts.length > 0) {
+    console.log(userPosts);
+    userPosts.forEach((post) => {
+      postContainer.innerHTML += postTemplateforUsers(post);
+    });
+  } else {
+    const paragraph = document.querySelector("#no-blogs-created");
+    paragraph.textContent = "You didn't create any blogs yet!";
+    paragraph.style = "text-align:center";
+  }
 };
 
 window.onload = async (e) => {
