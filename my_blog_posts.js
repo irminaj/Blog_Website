@@ -3,6 +3,7 @@ const logoutBtn = document.getElementById("logout-btn");
 const user = JSON.parse(localStorage.getItem("user"));
 const toggleButton = document.querySelector("#toggle-button");
 const navbarLinks = document.querySelector("#links-container");
+const editBtn = document.querySelector(".edit");
 
 toggleButton.addEventListener("click", () => {
   navbarLinks.classList.toggle("active");
@@ -11,11 +12,20 @@ toggleButton.addEventListener("click", () => {
 const API_ENDPOINTS = {
   getPosts: "https://testapi.io/api/irminaj/resource/newPosts",
   deletePost: (id) => `https://testapi.io/api/irminaj/resource/newPosts/${id}`,
+  getPostById: (id) => `https://testapi.io/api/irminaj/resource/newPosts/${id}`,
 };
 
 // Get posts
 
 const getPosts = (url) => {
+  return fetch(url)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((err) => console.log(err));
+};
+
+const getPostById = (id) => {
+  const url = API_ENDPOINTS.getPostById(id);
   return fetch(url)
     .then((response) => response.json())
     .then((data) => data)
@@ -33,6 +43,16 @@ const deletePost = (id) => {
     .catch((err) => console.log(err));
 };
 
+const editData = (url, data) => {
+  return fetch(url, {
+    method: "PUT",
+    body: data,
+  })
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((err) => console.log(err));
+};
+
 const postTemplateforUsers = (data) => {
   const x = JSON.stringify(data);
   return `
@@ -41,6 +61,7 @@ const postTemplateforUsers = (data) => {
       <h3>${data.title}</h3>
       <p>${data.content}</p>
       <button class="delete" onClick=deletePost(${data.id})>Delete</button>
+      <button class="edit" onClick=handlePostEdit(${data.id})>Edit</button>
     </div>
   `;
 };
@@ -85,3 +106,13 @@ logoutBtn.addEventListener("click", (e) => {
   logoutBtn.style.display = "none";
   location.reload();
 });
+
+// edit blog
+
+const handlePostEdit = async (id) => {
+  editPostId = id;
+  const postDataById = await getPostById(id);
+  console.log(postDataById);
+  sessionStorage.setItem("post", JSON.stringify(postDataById));
+  location.href = "edit_blog.html";
+};

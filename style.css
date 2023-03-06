@@ -69,7 +69,8 @@
 * body main #posts-container .post p {
   padding: 10px 20px;
 }
-* body main #posts-container .post .delete {
+* body main #posts-container .post .delete,
+* body main #posts-container .post .edit {
   margin-left: 20px;
   font-family: "Quicksand", sans-serif;
   margin-top: 10px;
