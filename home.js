@@ -58,17 +58,10 @@ const postTemplate = (data) => {
 
 window.onload = async (e) => {
   e.preventDefault();
-  // const posts = await getPosts(API_ENDPOINTS.getPosts);
   if (localStorage.length > 0) {
     logoutBtn.style.display = "inline-block";
-    // posts.data.forEach((post) => {
-    //   postContainer.innerHTML += postTemplateforUsers(post);
-    // });
   } else {
     logoutBtn.style.display = "none";
-    // posts.data.forEach((post) => {
-    //   postContainer.innerHTML += postTemplate(post);
-    // });
   }
   const posts = await getPosts(API_ENDPOINTS.getPosts);
   posts.data.forEach((post) => {
@@ -81,6 +74,6 @@ window.onload = async (e) => {
 logoutBtn.addEventListener("click", (e) => {
   e.preventDefault();
   localStorage.clear();
-  // logoutBtn.style.display = "none";
+  logoutBtn.style.display = "none";
   location.reload();
 });

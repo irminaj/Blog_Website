@@ -56,10 +56,6 @@
           }
         }
       }
-      // a,
-      // #logout-btn {
-      //   display: none;
-      // }
     }
 
     main {
@@ -73,7 +69,6 @@
           padding-bottom: 10px;
           img {
             width: 100%;
-            // height: 100%;
           }
           h3,
           p {
@@ -101,11 +96,6 @@
       flex-direction: column;
       width: 80%;
       width: 80%;
-      // position: absolute;
-      // top: 50%;
-      // left: 50%;
-      // margin-right: -50%;
-      // transform: translate(-50%, -50%);
       margin: 20px auto;
       padding: 20px;
 
@@ -172,12 +162,6 @@
         display: flex;
         width: auto;
         align-items: center;
-        // a,
-        // input,
-        // form,
-        // button {
-        //   display: inline-block;
-        // }
       }
 
       a {
@@ -239,6 +223,9 @@
         .post {
           margin-right: 10px;
           max-width: 300px;
+          img {
+            height: 200px;
+          }
         }
       }
     }
