@@ -131,6 +131,7 @@
 
 @media only screen and (min-width: 768px) {
   body #nav {
+    padding: 0 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -144,10 +145,14 @@
     align-items: center;
   }
   body #nav a {
+    padding: 30px;
     color: black;
     text-decoration: none;
     margin-right: 8px;
     font-size: 20px;
+  }
+  body #nav a:hover {
+    background-color: #c6c2c2;
   }
   body #nav button {
     font-family: "Quicksand", sans-serif;
